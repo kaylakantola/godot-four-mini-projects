@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="godot-four-mini-projects"
+run/main_scene="uid://bphq27krxmhnu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

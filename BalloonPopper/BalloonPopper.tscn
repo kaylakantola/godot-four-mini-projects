@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bphq27krxmhnu"]
+
+[ext_resource type="Script" uid="uid://ba4rpxlcbbfn0" path="res://BalloonPopper/balloon_manager.gd" id="1_20san"]
+[ext_resource type="PackedScene" uid="uid://njbfrjx5s571" path="res://BalloonPopper/balloon.tscn" id="2_80j25"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_80j25"]
+font_size = 50
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("score_text")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000182152, -0.00466037, 0.000641823)
+script = ExtResource("1_20san")
+score_text = NodePath("ScoreText")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00105813, 0, 1.97736)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.849147, 0.528157, 0, -0.528157, 0.849147, 0, 1.96949, 1.81642)
+
+[node name="Balloon2" parent="." instance=ExtResource("2_80j25")]
+transform = Transform3D(0.998461, 0.0406196, 0.0377455, -0.0358813, 0.992283, -0.11869, -0.0422753, 0.117153, 0.992214, -1.28005, 0.948101, -2.16116)
+clicks_to_pop = 5
+size_increase = 0.3
+score_to_give = 2
+
+[node name="Balloon3" parent="." instance=ExtResource("2_80j25")]
+transform = Transform3D(0.998461, 0.0406196, 0.0377455, -0.0358813, 0.992283, -0.11869, -0.0422753, 0.117153, 0.992214, 1.41692, 0.948101, -2.16116)
+clicks_to_pop = 1
+size_increase = 0.5
+
+[node name="Balloon4" parent="." instance=ExtResource("2_80j25")]
+transform = Transform3D(0.998461, 0.0406196, 0.0377455, -0.0358813, 0.992283, -0.11869, -0.0422753, 0.117153, 0.992214, 0.115073, -1.0884, -2.16116)
+
+[node name="Balloon5" parent="." instance=ExtResource("2_80j25")]
+transform = Transform3D(0.998461, 0.0406196, 0.0377455, -0.0358813, 0.992283, -0.11869, -0.0422753, 0.117153, 0.992214, 1.63463, -1.0884, -2.15907)
+clicks_to_pop = 5
+size_increase = 0.1
+score_to_give = 4
+
+[node name="Balloon6" parent="." instance=ExtResource("2_80j25")]
+transform = Transform3D(0.998461, 0.0406196, 0.0377455, -0.0358813, 0.992283, -0.11869, -0.0422753, 0.117153, 0.992214, -2.3118, -1.0884, -2.15907)
+clicks_to_pop = 10
+score_to_give = 20
+
+[node name="ScoreText" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 23.0
+offset_right = 100.0
+offset_bottom = 46.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_80j25")
